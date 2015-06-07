@@ -3,10 +3,34 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Game</title>
+
+    <script src="app/lib/pixi.js/bin/pixi.js"></script>
 </head>
 <body>
-    <div>
-        it works!
-    </div>
+
+<script>
+    var stage = new PIXI.Stage(0xFFFFFF, true);
+
+    // create a renderer instance
+    var renderer = new PIXI.autoDetectRenderer(3004, 3000);
+
+    var cat = PIXI.Sprite.fromImage("images/chatninja.png");
+
+    stage.addChild(cat);
+
+
+    function animate() {
+        requestAnimationFrame( animate );
+        renderer.render(stage);
+    }
+
+    requestAnimationFrame( animate );
+
+    document.body.appendChild(renderer.view);
+</script>
+<div>
+
+
+</div>
 </body>
 </html>
